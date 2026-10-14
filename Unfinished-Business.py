@@ -60,7 +60,34 @@ def shame_and_remove(projects):
             print("Invalid number.")
     except ValueError:
         print("Please enter a valid number.")
+        
+def complete_project(projects):
+    """Shows the list, asks which project is finished, and congratulates the user."""
+    if not projects:
+        print("You have no projects to complete. Start something first!")
+        return
 
+    print("\n--- Your Unfinished Business ---")
+    for index, project in enumerate(projects):
+        print(f"{index + 1}. {project['name']}")
+
+    try:
+        choice = int(input("\nWhich project did you finally finish? ")) - 1
+        if 0 <= choice < len(projects):
+            finished_project = projects[choice]['name']
+            print(f"\n🎉 You finished: '{finished_project}'! 🎉")
+            print("\nThe world you see today is made by some dedicated and")
+            print("determined souls like you. Finishing a project is a brick")
+            print("laid perfectly in the castle of your dreams.")
+            print("\nWell done. Truly.")
+            
+            projects.pop(choice)
+            save_projects(projects)
+        else:
+            print("Invalid number.")
+    except ValueError:
+        print("Please enter a valid number.")
+        
 def main():
     """The main loop of the program."""
     print("Welcome to Unfinished Business.")
@@ -68,7 +95,7 @@ def main():
 
     while True:
         # Display the current list of projects
-        print("\n--- Your Current Unfinished Business ---")
+        print(f"\n--- Your Current Unfinished Business ({len(projects)} projects) ---")
         if not projects:
             print("(Your list is empty. Shameful. Start something!)")
         else:
@@ -78,7 +105,8 @@ def main():
         print("\n--- Main Menu ---")
         print("1. Add a new project")
         print("2. Review/Remove a project (Shame Letter required)")
-        print("3. Exit")
+        print("3. Mark a project as FINISHED (Celebration!)")
+        print("4. Exit")
         
         choice = input("What do you want to do? ")
 
@@ -87,6 +115,8 @@ def main():
         elif choice == "2":
             shame_and_remove(projects)
         elif choice == "3":
+            complete_project(projects)
+        elif choice == "4":
             print("Go finish your projects.")
             break
         else:
