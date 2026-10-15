@@ -27,3 +27,8 @@ You need Python 3 installed on your machine.
 - You can add new projects, review existing ones, or mark a project as finished from the main menu.
 - **The Shame Letter:** If you try to *remove* an abandoned project, the app will force you to write a 500-character letter of shame first. This is a feature, not a bug.
 - **The Celebration:** If you *finish* a project, the app will congratulate you. Because finishing things matters.
+
+### Built With
+
+- Python 3
+- Standard library only (`json`, `os`)
