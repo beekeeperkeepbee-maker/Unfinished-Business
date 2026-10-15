@@ -6,6 +6,7 @@ It tracks my unfinished business (books, gym plans, skills) and forces me to wri
 
 ### Current Status
 - [x] Version 1.0: Command-line interface with file storage and the "Shame Letter" feature.
+- [x] Version 1.1: Finished project tracking with proud/encouraging dashboard messages.
 - [ ] Version 2.0: Random desktop notifications.
 - [ ] Version 3.0: Detect when the screen is on and trigger reminders.
 
@@ -23,10 +24,11 @@ You need Python 3 installed on your machine.
 
 ### How It Works
 
-- The app starts by showing you a list of all your unfinished projects.
-- You can add new projects, review existing ones, or mark a project as finished from the main menu.
-- **The Shame Letter:** If you try to *remove* an abandoned project, the app will force you to write a 500-character letter of shame first. This is a feature, not a bug.
-- **The Celebration:** If you *finish* a project, the app will congratulate you. Because finishing things matters.
+- The app opens with a dashboard showing your unfinished projects and a proud/encouraging message based on how many you've finished.
+- **Add:** Start tracking a new project.
+- **Finish:** Mark a project as complete — you'll be congratulated, and it moves to your finished list.
+- **Delete:** Try to abandon a project, and the app forces you to write a 500-character letter of shame first. This is a feature, not a bug.
+- **The Dashboard:** If you haven't finished anything yet, the app gives you a firm push. If you have, it proudly announces your success. Either way, it's watching.
 
 ### Built With
 
